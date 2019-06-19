@@ -1,0 +1,24 @@
+# kubectl create -f rc-description.yml
+# kubectl get replicationcontroller 
+## ReplicationControler v1
+
+apiVersion: v1
+kind: ReplicationController
+metadata:
+ name: app-name-rc
+ labels:
+   app: app-name
+   key: value
+spec:
+  template:
+    # Below is nested from the POD yml
+    metadata:
+     name: app-name-pod
+     labels:
+       app: app-name
+       key: value
+    spec:
+     containers:
+       - name: nginx-container
+         image: nginx
+  replica: 3

@@ -1,0 +1,15 @@
+# $ kubectl create -f this-file.yml
+# $ kubectl get pods
+# $ kubectl describe pod app-name-pod
+
+apiVersion: v1
+kind: Pod
+metadata:
+ name: app-name-pod
+ labels:
+   app: app-name 
+   key: value
+spec:
+ containers:
+   - name: nginx-container
+     image: nginx
